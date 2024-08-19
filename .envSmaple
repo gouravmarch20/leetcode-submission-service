@@ -1,0 +1,5 @@
+PORT=3000
+REDIS_HOST='127.0.0.1'
+REDIS_PORT=6379
+ATLAS_DB_URL="mongodb+srv://gouravmarch20:<Password>@cluster0.pcxkc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+NODE_ENV="development"
