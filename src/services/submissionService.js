@@ -1,4 +1,4 @@
-const { fetchProblemDetails } = require('../apis/problemAdminApi');
+ const { fetchProblemDetails } = require('../apis/problemAdminApi');
 const SubmissionCreationError = require('../errors/submissionCreationError');
 const SubmissionProducer = require('../producers/submissionQueueProducer');
 class SubmissionService {
@@ -23,12 +23,14 @@ class SubmissionService {
 
         const languageCodeStub = problemAdminApiResponse.data.codeStubs.find(codeStub => codeStub.language.toLowerCase() === submissionPayload.language.toLowerCase());
 
-        console.log(languageCodeStub) 
+        console.log("languageCodeStub" , languageCodeStub) 
 
-        submissionPayload.code = languageCodeStub.startSnippet + "\n\n" + submissionPayload.code + "\n\n" + languageCodeStub.endSnippet;
+        submissionPayload.code = languageCodeStub.startSnippet + "\n\n" + submissionPayload.code + "\n\n" + (languageCodeStub.endSnippet || "");
 
 
         const submission = await this.submissionRepository.createSubmission(submissionPayload);
+        console.log(`submission` , submission)
+        
         if(!submission) {
             // TODO: Add error handling here
             throw new SubmissionCreationError('Failed to create a submission in the repository');
