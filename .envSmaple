@@ -1,6 +1,6 @@
-PORT=3000
+PORT=4001
 REDIS_HOST='127.0.0.1'
 REDIS_PORT=6379
 ATLAS_DB_URL="mongodb+srv://gouravmarch20:<Password>@cluster0.pcxkc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 NODE_ENV="development"
-PROBLEM_ADMIN_SERVICE_URL="http://localhost:8000"
+PROBLEM_ADMIN_SERVICE_URL="http://localhost:4002"
