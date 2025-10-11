@@ -7,8 +7,7 @@ const evaluationWorker = require("./workers/evaluationWorker");
 const { FRONTEND_URL } = require("./config/serverConfig");
 const fastifyCors = require("@fastify/cors");
 
-console.log("FRONTEND_URL", FRONTEND_URL);
-
+ 
 
 fastify.register(fastifyCors, {
   origin: [FRONTEND_URL, "http://localhost:5173"], // allow your React dev server

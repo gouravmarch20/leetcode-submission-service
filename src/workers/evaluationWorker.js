@@ -13,12 +13,16 @@ function evaluationWorker(queue) {
     "EvaluationQueue",
     async (job) => {
       if (job.name === "EvaluationJob") {
-
         try {
+          console.log("pre_hit", {
+            userId: job.data.userId,
+            payload: job.data,
+          });
           const response = await axios.post(PROBLEM_ADMIN_API_URL, {
             userId: job.data.userId,
             payload: job.data,
           });
+          console.log("post_hit", response);
         } catch (error) {
           console.log(error.message);
         }
