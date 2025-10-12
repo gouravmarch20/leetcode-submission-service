@@ -12,15 +12,15 @@ class SubmissionService {
   }
 
   async getAllSubmission(submissionPayload) {
-
-    const { problemId } = submissionPayload;
-
+    const { problemId, userId } = submissionPayload;
+    console.log("debug_98", problemId);
     if (!problemId) {
       throw new Error("problemId  required");
     }
 
     const getSubmission = await this.submissionRepository.getSubmission(
-      problemId
+      problemId,
+      userId
     );
 
     return getSubmission;

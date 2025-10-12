@@ -18,8 +18,8 @@ class SubmissionRepository {
     });
   }
 
-  async getSubmission(problemId) {
-    return this.submissionModel.find({ problemId });
+  async getSubmission(problemId , userId) {
+    return this.submissionModel.find({ problemId , userId });
   }
 }
 

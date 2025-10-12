@@ -18,6 +18,7 @@ async function createSubmission(req, res) {
 }
 
 async function updateSubmission(req, res) {
+  console.log("hti_update" , req.body)
   const response = await this.submissionService.updateSubmission(req.body);
   return res.status(201).send({
     error: {},
